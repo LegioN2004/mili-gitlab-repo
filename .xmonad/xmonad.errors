@@ -1,0 +1,12 @@
+
+xmonad.hs:247:9: error:
+    Variable not in scope: spawmOnce :: [Char] -> m a0
+    |
+247 |         spawmOnce "nitrogen --restore &"
+    |         ^^^^^^^^^
+
+xmonad.hs:248:9: error:
+    Variable not in scope: spawmOnce :: [Char] -> m b
+    |
+248 |         spawmOnce "compton &"
+    |         ^^^^^^^^^

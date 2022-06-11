@@ -1,0 +1,2 @@
+#!/bin/sh
+feh --no-fehbg --bg-scale '/home/sunny/Pictures/Wallpapers/pexels-roberto-nickson-2775196.jpg' 
