@@ -3,7 +3,7 @@
         {
             "name": "Win32",
             "includePath": [
-                "C:\\ProgramData\\chocolatey\\lib\\mingw\\tools\\install\\mingw64\\bin"
+                "D:\\msys64\\mingw64\\bin"
             ],
             "defines": [
                 "_DEBUG",
@@ -13,7 +13,7 @@
             "cStandard": "c17",
             "cppStandard": "c++17",
             "intelliSenseMode": "windows-clang-x86",
-            "compilerPath": "C:/ProgramData/chocolatey/lib/mingw/tools/install/mingw64/bin/g++.exe"
+            "compilerPath": "D:/msys64/mingw64/bin/g++.exe"
         }
     ],
     "version": 4
