@@ -1,2 +1,3 @@
 Documents/VSCode programs/codewithharry/apnacollegeprograms/tut4.1/qno5.exe
  !*/*.exe      #unignore .exe header files in each directory
+ !*/*.out      #unignore .out header files in each directory
