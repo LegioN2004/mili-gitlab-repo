@@ -70,7 +70,7 @@ inoremap {{ {
     set wrap " wraps longs lines to screen size
 "highlight statuslinenc guifg=slateblue guibg=yellow
 "highlight statusline guifg=gray guibg=black
-" set vb t_vb= " stop beeping or flashing the screen
+    "set vb t_vb= " stop beeping or flashing the screen
 
 
 " 5. Working with split windows and tabs
