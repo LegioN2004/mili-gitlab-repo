@@ -27,6 +27,8 @@ set hlsearch
 set scrolloff=8
 set noshowmode
 set completeopt=menuone,noinsert,noselect
+"set clipboard to universal for easy copy/paste to diff apps
+set clipboard=unnamed,unnamedplus
 " set signcolumn=no  
 set mouse=a
 " give more space for displaying messages.
