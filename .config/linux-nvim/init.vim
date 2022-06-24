@@ -88,7 +88,7 @@ inoremap <c-l> <right>
 inoremap qq <esc>
 vnoremap qq <esc>
 nmap <C-t> :F<cr>
-
+nmap <leader>/ gcc
 
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 "idk what is this for
