@@ -52,12 +52,9 @@ set guifont=Hack\ NF:h19
 call plug#begin()
 Plug 'tpope/vim-commentary'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" plug 'vim-airline/vim-airline'
-Plug 'joshdick/onedark.vim'
 Plug 'overcache/neosolarized'
 Plug 'jiangmiao/auto-pairs'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':tsupdate'}
-Plug 'vim-syntastic/syntastic'
 
 if has("nvim")
     Plug 'hoob3rt/lualine.nvim'
