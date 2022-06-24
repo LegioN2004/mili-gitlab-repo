@@ -63,7 +63,13 @@ if has("nvim")
     Plug 'nvim-lua/popup.nvim'
     Plug 'nvim-lua/plenary.nvim'
     Plug 'nvim-telescope/telescope.nvim'
+    Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+    Plug 'Shougo/defx.vim'
+    Plug 'roxman/nvim-yarp'
+    Plug 'roxma/vim-hug-neovim-rpc'
 endif
+
 call plug#end()
 
 "some keybinds for easy saving and closing and something
@@ -74,6 +80,7 @@ nmap <leader>q :q!<cr>
 nmap <leader>s :so%<cr>
 "remaping ctrl + c to copy to system clipboard
 vnoremap <C-c> "*y
+vnoremap <C-v> "*p
 inoremap <c-k> <up>
 inoremap <c-j> <down>
 inoremap <c-h> <left>
@@ -83,6 +90,8 @@ vnoremap qq <esc>
 nmap <C-t> :F<cr>
 
 
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+"idk what is this for
 "set terminal type
 "nnoremap <leader>ps :lua require('telescope.builtin').grep_string({ search = vim.fn.input("grep for > ")})<cr>
 function! Termwrapper(command) abort
@@ -155,6 +164,7 @@ if has('win32')
     set rtp^=$home
 endif
 
+"for vscode neovim
 if exists('g:vscode')
     " vscode extension
 else 
@@ -223,21 +233,6 @@ nmap <silent> gy <plug>(coc-type-definition)
 nmap <silent> gi <plug>(coc-implementation)
 nmap <silent> gr <plug>(coc-references)
 
-
-" #syntastic-vim
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
-
-"vim commentary
-autocmd FileType apache setlocal commentstring=#\ %s
-
 " javascript extensions for coc
 let g:coc_global_extensions = [
             \ 'coc-tsserver',
@@ -248,21 +243,6 @@ let g:coc_global_extensions = [
             \ 'coc-css',
             \    ]
 
-""things for coc
-" Use tab for trigger completion with characters ahead and navigate.
-" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
-" other plugin before putting this into your config.
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ CheckBackspace() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-function! CheckBackspace() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
 " Use <c-space> to trigger completion.
 if has('nvim')
   inoremap <silent><expr> <c-space> coc#refresh()
@@ -272,4 +252,70 @@ endif
 
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+" " #syntastic-vim
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
+
+
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+"vim commentary
+autocmd FileType apache setlocal commentstring=#\ %s
+
+
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+"defx setup
+nnoremap <silent> <Leader>d :<C-U>:Defx -resume -buffer_name=explorer -split=vertical -vertical_preview<CR>
+
+nnoremap <silent> - :<C-U>:Defx `expand('%:p:h')` -search=`expand('%:p')` -buffer-name=defx<CR>
+
+autocmd FileType defx call s:defx_my_settings()
+function! s:defx_my_settings() abort
+  " Define mappings
+  nnoremap <silent><buffer><expr> <CR>
+  \ defx#is_directory() ?
+  \ defx#do_action('open_tree', 'recursive:10') :
+  \ defx#do_action('preview')
+  nnoremap <silent><buffer><expr> b
+  \ defx#do_action('multi', ['close_tree', 'close_tree', 'close_tree', 'close_tree', 'close_tree', 'close_tree', 'close_tree', 'close_tree', 'close_tree', 'close_tree'])
+  nnoremap <silent><buffer><expr> o
+  \ match(bufname('%'), 'explorer') >= 0 ?
+  \ (defx#is_directory() ? 0 : defx#do_action('drop', 'vsplit')) :
+  \ (defx#is_directory() ? 0 : defx#do_action('multi', ['open', 'quit']))
+  nnoremap <silent><buffer><expr> l
+  \ defx#is_directory() ? defx#do_action('open') : 0
+  nnoremap <silent><buffer><expr> h
+  \ defx#do_action('cd', ['..'])
+  nnoremap <silent><buffer><expr> K
+  \ defx#do_action('new_directory')
+  nnoremap <silent><buffer><expr> N
+  \ defx#do_action('new_file')
+  nnoremap <silent><buffer><expr> d
+  \ defx#do_action('remove')
+  nnoremap <silent><buffer><expr> r
+  \ defx#do_action('rename')
+  nnoremap <silent><buffer><expr> q
+  \ defx#do_action('quit')
+endfunction
+" '''
+
+" hook_post_source = '''
+call defx#custom#option('_', {
+\ 'winwidth': 50,
+\ 'ignored_files': '.*,target*',
+\ 'direction': 'topleft',
+\ 'toggle': 1,
+\ 'columns': 'indent:git:icons:filename:mark',
+\ })
+" '''
+
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
