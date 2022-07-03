@@ -1,3 +1,4 @@
+// to print the sum of nos
 #include<iostream>
 using namespace std;
    
