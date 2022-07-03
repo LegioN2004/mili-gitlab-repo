@@ -15,7 +15,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
- ZSH_THEME="spaceship"
+ ZSH_THEME="robbyrussell"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -127,18 +127,23 @@ export PATH=$PATH:~/.local/bin/
 # alias -g [lvim]=”cd ~/.local/bin/ && ./lvim”
 
 #aliases
-alias nv="nvim -u /home/sunny/.config/nvim/init.vim"
+# alias nv="nvim -u /home/sunny/.config/nvim/init.vim"
 
 # ls
 alias l='ls -lh'
-alias ll='ls -lah'
-alias la='ls -A'
+# alias ll='ls -lah'
+alias lla='ls -A'
 alias lm='ls -m'
 alias lr='ls -R'
 alias lg='ls -l --group-directories-first'
+# alias ll='exa -l -g --icons'
+alias ls='exa -l -g --icons'
+alias ll='exa -l -a --icons'
+alias ld='exa -l -a -T --icons'
  
 # git
-alias gcl='git clone --depth 1'
+alias g='git'
+alias gcl='git clone'
 alias gi='git init'
 alias ga='git add'
 alias gc='git commit -m'
@@ -150,14 +155,22 @@ alias ran='ranger'
 
 #neovim
 alias v='nvim'
+alias nv='neovide'
+
+#C++ run code alias
+alias compile='g++'
+alias run='./a.out'
 
 #z directory jumper
 . ~/z.sh
 
+#tmux
+# alias tmux='tmux -u'
 # ~/.zshrc
 
-eval "$(starship init zsh)"
+# eval "$(starship init zsh)"
 
-export STARSHIP_CONFIG=~/.config/starship/starship.toml
+# export STARSHIP_CONFIG=~/.config/starship/starship.toml
 
 
+source ~/powerlevel10k/powerlevel10k.zsh-theme
