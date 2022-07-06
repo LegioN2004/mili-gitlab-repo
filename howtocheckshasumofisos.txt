@@ -1,0 +1,3 @@
+echo "28ccdb56450e643bad03bb7bcf7507ce3d8d90e8bf09e38f6bd9ac298a98eaad *ubuntu-20.04.4-live-server-amd64.iso" | shasum -a 256 --check
+
+after the echo part inside "" put the shasum part similar to that of above and after the * put the name of the iso as above and them pipe them as shown above
