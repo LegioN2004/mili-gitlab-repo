@@ -161,11 +161,24 @@ alias nv='neovide'
 alias compile='g++'
 alias run='./a.out'
 
-#z directory jumper
+#git bare alias
+# alias config='/usr/bin/git --git-dir=/home/sunny/mili-gitlab-repo --work-tree=/home/sunny'
+# alias dotfiles='/usr/bin/git --git-dir=/home/sunny/dotfiles --work-tree=/home/sunny'
+# alias g='git'
+# alias gcl='git clone'
+# alias gi='git init'     
+# alias ga='dotfiles add'
+# alias gc='dotfiles commit -m'
+# alias gp='dotfiles push git@github.com:LegioN2004/dotfiles.git'     
+# alias gs='dotfiles status'   # 
+
+#z directory
 . ~/z.sh
 
 #tmux
 # alias tmux='tmux -u'
+
+
 # ~/.zshrc
 
 # eval "$(starship init zsh)"
@@ -174,3 +187,7 @@ alias run='./a.out'
 
 
 source ~/powerlevel10k/powerlevel10k.zsh-theme
+
+
+export LANG=en_US.UTF-8
+export LC_CTYPE=en_US.UTF-8

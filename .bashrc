@@ -159,3 +159,8 @@ alias nv='neovide'
 #C++ run code alias
 alias compile='g++'
 alias run='./a.out'
+
+
+export LANG=en_US.UTF-8
+export LC_CTYPE=en_US.UTF-8
+
