@@ -116,40 +116,46 @@ if ! shopt -oq posix; then
   fi
 fi
 
-neofetch
+#starship
+eval "$(starship init bash)"
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
-## Bash Aliases
-alias vim='nvim'
+. "$HOME/.cargo/env"
+
+#z directory jumper
+. ~/z.sh
+
+alias config='/usr/bin/git --git-dir=/home/sunny/mili-gitlab-repo --work-tree=/home/sunny'
+
+
+#aliases
+# ls
+alias l='ls -lh'
+# alias ll='ls -lah'
+alias lla='ls -A'
+alias lm='ls -m'
+alias lr='ls -R'
+alias lg='ls -l --group-directories-first'
+# alias ll='exa -l -g --icons'
+alias ls='exa -l -g --icons'
+alias ll='exa -l -a --icons'
+alias ld='exa -l -a -T --icons'
+ 
+# git
+alias g='git'
+alias gcl='git clone'
+alias gi='git init'
+alias ga='git add'
+alias gc='git commit -m'
+alias gp='git push'
+alias gs='git status'
+
+#ranger
+alias ran='ranger'
+
+#neovim
 alias v='nvim'
-#alias vifm='vifmrun'
-alias sai='sudo apt install'
-alias sainir='sudo apt install --no-install-recommends'
-alias grep='grep --color=auto'
-alias egrep='egrep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias ll='ls -l'
-alias la='ls -A'
-alias ls.='ls -A | egrep "^\."'
-alias merge='xrdb -merge ~/.Xresources'
-alias bsh='. ~/.bashrc'
-alias ..='cd ..'
-alias q='exit'
-alias h='cd ~/'
-alias c='clear'
-alias C='cd ~/.config'
-alias d='cd ~/dl'
-alias D='cd ~/dox'
-alias e='cd /etc'
-alias dmr='dmenu_run'
-alias vdwm='cd ~/.local/src/dwm && nvim config.def.h'
-alias vst='cd ~/.local/src/st && nvim config.def.h'
-alias dangit='sudo "$BASH" -c "$(history -p !!)"'  # eqivalent to sudo !!
-alias pk='sudo pkill'
-alias bashrc='nvim ~/.bashrc'
-alias svgpng='inkscape --export-type"png"'
-alias nasbox='ssh mike@192.168.0.19'
+alias nv='neovide'
 
-#+begin_example
-PATH="$HOME/.local/bin/${PATH:+:${PATH}}"
-#+end_example
+#C++ run code alias
+alias compile='g++'
+alias run='./a.out'
