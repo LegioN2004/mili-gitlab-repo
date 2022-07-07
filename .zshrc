@@ -105,6 +105,7 @@ source $ZSH/oh-my-zsh.sh
 #
 # Example aliases
  alias zshconfig="nvim  ~/.zshrc"
+ alias bashconfig="nvim  ~/.bashrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
@@ -160,6 +161,10 @@ alias nv='neovide'
 #C++ run code alias
 alias compile='g++'
 alias run='./a.out'
+
+#tmux
+alias ide='./ide'
+
 
 #git bare alias
 # alias config='/usr/bin/git --git-dir=/home/sunny/mili-gitlab-repo --work-tree=/home/sunny'

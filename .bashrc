@@ -160,6 +160,12 @@ alias nv='neovide'
 alias compile='g++'
 alias run='./a.out'
 
+#tmux
+alias ide='./ide'
+
+#config files
+alias zshconfig="nvim  ~/.zshrc"
+alias bashconfig="nvim  ~/.bashrc"
 
 export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
