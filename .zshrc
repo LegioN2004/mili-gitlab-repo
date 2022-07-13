@@ -184,6 +184,7 @@ alias ide='./ide'
 # alias tmux='tmux -u'
 
 
+
 # ~/.zshrc
 
 # eval "$(starship init zsh)"
