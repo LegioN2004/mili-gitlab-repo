@@ -15,6 +15,7 @@ int fact(int n){
    }
    return factorial;
 }
+irntinrst
 
 
 int main(){
