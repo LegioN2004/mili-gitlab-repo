@@ -15,6 +15,10 @@ int fact(int n){
    }
    return factorial;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0d0b5e6705d9eca642add939f0f061844ecddfca
 
 int main(){
    int n;
