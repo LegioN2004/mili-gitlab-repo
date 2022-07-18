@@ -13,7 +13,7 @@ set $mod Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:MesloLGS NF Regular 9 
+font pango:Hack NF Regular 8 
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -152,9 +152,9 @@ bindsym $mod+Shift+0 move container to workspace  $ws10
 # assign [class="Min"] $ws2
 assign [class="xfce4-terminal"] $ws3
 assign [class="code"] $ws3
-assign [class="Thunar"] $ws4
-assign [class="Shotcut"] $ws5
-assign [class="obs"] $ws6
+assign [class="nautilus"] $ws4
+# assign [class="Shotcut"] $ws5
+# assign [class="obs"] $ws6
 # assign [class="neovide"] $ws7
 assign [class="brave-browser"] $ws2
 
@@ -212,10 +212,12 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-    status_command i3blocks -c ~/.i3/i3blocks.conf
- # status_command ~/.local/bin/bumblebee-status \
- #  -t  dracula-powerline \
- #  -m  cpu memory disk pasink battery datetime -p cpu.interval=3s memory.interval=10s pasink.interval=1s datetime.interval=1s \
+#to use i3blocks install it explicitly otherwise dependencies don't get fulfilled
+#     status_command i3blocks -c ~/.i3/i3blocks.conf
+# download bumblebee status from pip 
+ status_command ~/.local/bin/bumblebee-status \ #you need an extra psutil from pip for cpu meter to work
+  -t  dracula-powerline \
+  -m  cpu memory disk pasink battery datetime -p cpu.interval=3s memory.interval=10s pasink.interval=1s datetime.interval=1s \
 
    colors {
      background $bg-color
@@ -246,10 +248,10 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 
-exec_always feh --bg-scale /home/sunny/Pictures/Wallpapers/minimal-landscape-wallpaper-1366x768-wallpaper.jpg
+exec_always feh --bg-scale /home/sunny/Pictures/Wallpapers/2944349.jpg
 # exec_always feh --bg-scale /home/sunny/Downloads/11015703.png
 
-exec_always --no-startup-id  "/home/sunny/.config/colemakexe"
+exec_always --no-startup-id  "/home/sunny/colemak"
 
 
 # exec_always --no-startup-id "/home/sunny/Downloads/i3-auto-layout" 
@@ -262,9 +264,9 @@ bindsym $mod+n exec redshift -P -O 2500
 bindsym $mod+shift+n exec redshift -x
 
 # Screenshots
-bindsym Print exec --no-startup-id maim "/home/$USER/Pictures/$(date)"
-bindsym $mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) "/home/$USER/Pictures/$(date)"
-bindsym Shift+Print exec --no-startup-id maim --select "/home/$USER/Pictures/$(date)"
+bindsym Print exec --no-startup-id maim "/home/$USER/Pictures/Screenshots/$(date)"
+bindsym $mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) "/home/$USER/Pictures/Screenshots/$(date)"
+bindsym Shift+Print exec --no-startup-id maim --select "/home/$USER/Pictures/Screenshots/$(date)"
 
 ## Clipboard Screenshots
 bindsym Ctrl+Print exec --no-startup-id maim | xclip -selection clipboard -t image/png
