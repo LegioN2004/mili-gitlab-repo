@@ -117,9 +117,9 @@ if ! shopt -oq posix; then
 fi
 
 #starship
-eval "$(starship init bash)"
+# eval "$(starship init bash)"
 
-. "$HOME/.cargo/env"
+# . "$HOME/.cargo/env"
 
 #z directory jumper
 . ~/z.sh
