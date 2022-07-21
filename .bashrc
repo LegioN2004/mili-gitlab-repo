@@ -170,11 +170,21 @@ alias bashconfig="nvim  ~/.bashrc"
 export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
 
-#powerline
-function _update_ps1() {
-    PS1=$(powerline-shell $?)
-}
+#powerline-shell
+# function _update_ps1() {
+#     PS1=$(powerline-shell $?)
+# }
 
-if [[ $TERM != linux && ! $PROMPT_COMMAND =~ _update_ps1 ]]; then
-    PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
-fi
+# if [[ $TERM != linux && ! $PROMPT_COMMAND =~ _update_ps1 ]]; then
+#     PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
+# fi
+
+
+# Powerline-status
+export PATH="$PATH:~/.local/bin/"
+export LC_ALL=en_US.UTF-8
+powerline-daemon -q 
+POWERLINE_BASH_CONTINUATION=1
+POWERLINE_BASH_SELECT=1
+source /home/sunny/.local/lib/python3.10/site-packages/powerline/bindings/bash/powerline.sh
+
