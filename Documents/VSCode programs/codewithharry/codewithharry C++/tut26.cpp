@@ -51,5 +51,4 @@ int main()
 5. Can be declared inside public or private section of a class   
 6. It cannot access the members directly by their names and need object_name.member_name to access any
    member
-
 /*
