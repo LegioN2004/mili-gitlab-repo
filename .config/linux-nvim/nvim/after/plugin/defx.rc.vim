@@ -98,7 +98,7 @@ call defx#custom#column('git', 'indicators', {
 
 " hook_post_source = '''
 call defx#custom#option('_', {
-\ 'winwidth': 50,
+\ 'winwidth': 35,
 \ 'ignored_files': '.*,target*',
 \ 'direction': 'topleft',
 \ 'toggle': 1,

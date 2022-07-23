@@ -7,6 +7,7 @@ set ai
 set si
 set wildmenu
 set showmatch
+set number
 set relativenumber
 set nohlsearch
 set hidden
@@ -15,7 +16,6 @@ set tabstop=4 softtabstop=4
 set shiftwidth=4
 set expandtab
 set smartindent
-set nu
 set smartcase
 set noswapfile
 set nobackup
@@ -58,11 +58,11 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'overcache/neosolarized'
 Plug 'jiangmiao/auto-pairs'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':tsupdate'}
-"Plug 'vim-syntastic/syntastic'
+Plug 'vim-syntastic/syntastic'
 
 if has("nvim")
     Plug 'hoob3rt/lualine.nvim'
-    Plug 'glepnir/lspsaga.nvim'
+    " Plug 'glepnir/lspsaga.nvim'
     Plug 'nvim-treesitter/nvim-treesitter', {'do':  ':tsupdate'}
     Plug 'nvim-lua/popup.nvim'
     Plug 'nvim-lua/plenary.nvim'
@@ -76,6 +76,7 @@ endif
 
 call plug#end()
 
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 "some keybinds for convenience
 let mapleader = " "
 nmap <leader>w :w!<cr>
@@ -90,6 +91,28 @@ inoremap qq <esc>
 vnoremap qq <esc>
 nmap <C-t> :F<cr>
 nmap <leader>/ gcc
+
+
+"some windows keybinds
+nmap ss :split<Return><C-w>w
+nmap sv :vsplit<Return><C-w>w
+nmap te :tabnew<Return><C-w>w
+nmap <tab> :tabnext<Return>
+nmap <S-tab> :tabprevious<Return>
+nmap <leader> <C-w>w
+map s<left> <C-w>h
+map s<up> <C-w>k
+map s<down> <C-w>j
+map s<right> <C-w>l
+map sh <C-w>h
+map sl <C-w>l
+map sj <C-w>j
+map sk <C-w>k
+"for resizing windows 
+nmap <C-w><left> <C-w><
+nmap <C-w><right> <C-w>>
+nmap <C-w><up> <C-w>+
+nmap <C-w><down> <C-w>-
 
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 "idk what is this for
@@ -202,7 +225,7 @@ autocmd sourcepost * highlight normal     ctermbg=none guibg=none
 " highlights "{{{
 " ---------------------------------------------------------------------
 set cursorline
-"set cursorcolumn
+" set cursorcolumn
 
 " set cursor line color on visual mode
 highlight visual cterm=none ctermbg=236 ctermfg=none guibg=grey40
@@ -268,3 +291,13 @@ inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
 "vim commentary
 autocmd FileType apache setlocal commentstring=#\ %s
 
+"netrw nerd tree like setup
+" let g:netrw_banner = 0
+" let g:netrw_liststyle = 3
+" let g:netrw_browse_split = 4
+" let g:netrw_altv = 1
+" let g:netrw_winsize = 25
+" augroup ProjectDrawer
+"   autocmd!
+"   autocmd VimEnter * :Vexplore
+" augroup END
