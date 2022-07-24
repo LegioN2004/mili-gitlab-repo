@@ -12,7 +12,7 @@ set $mod Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:Hack NF Regular 8 
+font pango:Hack NF Regular 9 
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -247,7 +247,7 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 
-exec_always feh --bg-scale /home/sunny/Pictures/Wallpapers/2944349.jpg
+exec_always feh --bg-scale /home/sunny/Pictures/Wallpapers/daniel-leone-v7daTKlZzaw-unsplash.jpg
 # exec_always feh --bg-scale /home/sunny/Downloads/11015703.png
 
 exec_always --no-startup-id  "/home/sunny/colemak"
@@ -292,4 +292,7 @@ default_floating_border pixel 1
 exec_always sxhkd -c $HOME/.config/sxhkd/sxhkdrc
 
 #dont know if this works but set up for colemak
-exec --no-startup-id setxkbmap -model pc104 -layout us,de -variant colemak, -option 'grp:alt_shift_toggle,shift:both_capslock,ctrl:nocaps'
+exec --no-startup-id setxkbmap -model pc104 -layout us,de -variant colemak, -option "grp:alt_shift_toggle,shift:both_capslock,ctrl:swapcaps"
+
+#remap for keyboard via xmodmap
+exec_always --no-startup-id xmodmap ~/.Xmodmap

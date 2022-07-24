@@ -15,6 +15,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+ # ZSH_THEME="powerlevel10k/powerlevel10k"
  ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
@@ -165,6 +166,8 @@ alias run='./a.out'
 #tmux
 alias ide='./ide'
 
+#gotop
+alias htop='gotop'
 
 #git bare alias
 # alias config='/usr/bin/git --git-dir=/home/sunny/mili-gitlab-repo --work-tree=/home/sunny'
@@ -197,3 +200,5 @@ alias ide='./ide'
 
 export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
+
+# setxkbmap -option caps:swapescape
