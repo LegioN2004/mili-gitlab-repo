@@ -31,7 +31,7 @@ set clipboard=unnamed,unnamedplus
 
 set completeopt=menuone,noinsert,noselect
 " set fontsize=h:19
-" set signcolumn=no  
+set signcolumn=no  
 set mouse=a
 " give more space for displaying messages.
 set cmdheight=2
@@ -96,10 +96,10 @@ nmap <leader>/ gcc
 "some windows keybinds
 nmap ss :split<Return><C-w>w
 nmap sv :vsplit<Return><C-w>w
-nmap te :tabnew<Return><C-w>w
+nmap tn :tabnew<Return><C-w>w
 nmap <tab> :tabnext<Return>
 nmap <S-tab> :tabprevious<Return>
-nmap <leader> <C-w>w
+" nmap <leader> <C-w>w
 map s<left> <C-w>h
 map s<up> <C-w>k
 map s<down> <C-w>j
@@ -216,21 +216,21 @@ endif
 
 
 "workaround for creating transparent bg
-autocmd sourcepost * highlight normal     ctermbg=none guibg=none
-            \ |    highlight linenr     ctermbg=none guibg=none
-            \ |    highlight signcolumn ctermbg=none guibg=none
+" autocmd sourcepost * highlight normal     ctermbg=none guibg=none
+"             \ |    highlight linenr     ctermbg=none guibg=none
+"             \ |    highlight signcolumn ctermbg=none guibg=none
 
 
 
-" highlights "{{{
-" ---------------------------------------------------------------------
+" " highlights "{{{
+" " ---------------------------------------------------------------------
 set cursorline
-" set cursorcolumn
+" " set cursorcolumn
 
-" set cursor line color on visual mode
-highlight visual cterm=none ctermbg=236 ctermfg=none guibg=grey40
+" " set cursor line color on visual mode
+" highlight visual cterm=none ctermbg=236 ctermfg=none guibg=grey40
 
-highlight linenr cterm=none ctermfg=240 guifg=#2b506e guibg=#000000
+" highlight linenr cterm=none ctermfg=240 guifg=#2b506e guibg=#000000
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
