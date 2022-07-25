@@ -26,31 +26,31 @@ set incsearch
 set hlsearch
 set scrolloff=8
 set noshowmode
-"set clipboard to universal for easy copy/paste to diff apps risntristniar
-set clipboard=unnamed,unnamedplus
-
+set clipboard=unnamed,unnamedplus "set clipboard to universal for easy copy/paste to diff apps 
 set completeopt=menuone,noinsert,noselect
 " set fontsize=h:19
 set signcolumn=no  
 set mouse=a
-" give more space for displaying messages.
-set cmdheight=2
-" don't pass messages to |ins-completion-menu|.
-set shortmess+=c
+set cmdheight=2a "give more space for displaying messages.
+set shortmess+=c "don't pass messages to |ins-completion-menu|.
 set cc=
 
 " Always change the directory to working directory of file in current buffer - http://vim.wikia.com/wiki/VimTip64
 autocmd BufEnter * call CHANGE_CURR_DIR()
-
 function! CHANGE_CURR_DIR()
     let _dir = expand("%:p:h")
     exec "cd " . _dir
     unlet _dir
 endfunction
 
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 "font for neovide
 set guifont=Hack\ NF:h19
 "check
+
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+"Plugins
 
 call plug#begin()
 Plug 'tpope/vim-commentary'
@@ -76,7 +76,8 @@ endif
 
 call plug#end()
 
-"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 "some keybinds for convenience
 let mapleader = " "
 nmap <leader>w :w!<cr>
@@ -91,7 +92,6 @@ inoremap qq <esc>
 vnoremap qq <esc>
 nmap <C-t> :F<cr>
 nmap <leader>/ gcc
-
 
 "some windows keybinds
 nmap ss :split<Return><C-w>w
@@ -108,13 +108,15 @@ map sh <C-w>h
 map sl <C-w>l
 map sj <C-w>j
 map sk <C-w>k
+
 "for resizing windows 
 nmap <C-w><left> <C-w><
 nmap <C-w><right> <C-w>>
 nmap <C-w><up> <C-w>+
 nmap <C-w><down> <C-w>-
 
-"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 "idk what is this for
 "set terminal type
 "nnoremap <leader>ps :lua require('telescope.builtin').grep_string({ search = vim.fn.input("grep for > ")})<cr>
@@ -138,11 +140,14 @@ function! Termwrapper(command) abort
     "autocmd bufenter <buffer> startinsert
 endfunction
 
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 "vim-fugitive intergration remaps
 " nmap <leader>gs :g<cr>
 "nmap <leader>gh :diffget //3<cr>
 "nmap <leader>gu :diffget //2<cr>
 "remaping ctrl + c to copy to system clipboard
+
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 "everything for running c++ files
 command! -nargs=0 CompileandRun call Termwrapper(printf('g++ -std=c++17 %s && ./a.out', expand('%')))
@@ -169,7 +174,7 @@ augroup cpptoolkit
     autocmd filetype cpp nnoremap <leader>fb :!g++ -std=c++11 -o %:r % && ./%:r<cr>
     autocmd filetype cpp nnoremap <leader>fr :!./%:r.out<cr>
 augroup end
-"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 " options
 " choose between 'vertical' and 'horizontal' for how the terminal window is split
@@ -194,8 +199,8 @@ else
     " ordinary neovim
 endif
 
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 "devaslife style of NeoSolarized terminal and nvim combination
 
 "syntax theme 
@@ -231,10 +236,9 @@ set cursorline
 " highlight visual cterm=none ctermbg=236 ctermfg=none guibg=grey40
 
 " highlight linenr cterm=none ctermfg=240 guifg=#2b506e guibg=#000000
-"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 "Everything of CoC.nvim
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
@@ -276,6 +280,7 @@ endif
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
             \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 " " #syntastic-vim
 " set statusline+=%#warningmsg#
