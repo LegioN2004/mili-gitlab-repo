@@ -1,3 +1,4 @@
+// find pythagorean triplet 
 #include<iostream>
 using namespace std;
 
