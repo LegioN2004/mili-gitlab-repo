@@ -31,7 +31,7 @@ set completeopt=menuone,noinsert,noselect
 " set fontsize=h:19
 set signcolumn=no  
 set mouse=a
-set cmdheight=2a "give more space for displaying messages.
+set cmdheight=2 "give more space for displaying messages.
 set shortmess+=c "don't pass messages to |ins-completion-menu|.
 set cc=
 
