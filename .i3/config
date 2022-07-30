@@ -46,7 +46,7 @@ bindsym $mod+Return exec kitty
 bindsym $mod+q kill
 
 #run dmenu(suckless) with the following command 
-# bindsym $mod+d exec --no-startup-id dmenu_run
+# bindsym $mod+d exec --no-startup-id dmenu_ru
 # bindsym $mod+d exec rofi -show drun -lines 3 -eh 2 -width 100 -padding 800 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 18"
 # bindsym $mod+p exec --no-startup-id rofi -show drun -show-icons -lines 8 -columns 3 -eh 2 -width 74 -padding 200 -opacity "40"
 bindsym $mod+p exec  rofi -show drun 
@@ -296,3 +296,5 @@ exec --no-startup-id setxkbmap -model pc104 -layout us,de -variant colemak, -opt
 
 #remap for keyboard via xmodmap
 exec_always --no-startup-id xmodmap ~/.Xmodmap
+#exec --no-startup-id setxkbmap -option "shift:both_capslock,ctrl:swapcap"
+exec_always --no-startup-id setxkbmap -layout us -variant colemak -option ctrl:swapcap
