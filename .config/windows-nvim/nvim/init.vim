@@ -53,6 +53,7 @@ set cc=
 "plugins
 call plug#begin('C:\Users\sunny\AppData\Local\nvim\autoload\plugged')
 Plug 'tpope/vim-commentary'
+Plug 'sheerun/vim-polyglot'
 Plug 'hoob3rt/lualine.nvim'
 Plug 'overcache/NeoSolarized'
 Plug 'jiangmiao/auto-pairs'
@@ -105,6 +106,23 @@ nmap <C-w><left> <C-w><
 nmap <C-w><right> <C-w>>
 nmap <C-w><up> <C-w>+
 nmap <C-w><down> <C-w>-
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+"just to make those backup files in another directory so as to not make a mess
+" make the directories if not present in userprofile(sunny) directory  
+let &directory = expand('~\vimfiles\swap')
+
+set backup
+let &backupdir = expand('~\vimfiles\backup')
+
+set undofile
+let &undodir = expand('~\vimfiles\undo')
+
+if !isdirectory(&undodir) | call mkdir(&undodir, "p") | endif
+if !isdirectory(&backupdir) | call mkdir(&backupdir, "p") | endif
+if !isdirectory(&directory) | call mkdir(&directory, "p") | endif
+
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
