@@ -6,7 +6,7 @@ class Employee
     static int count; // static varible always intialises by default from 0 ; what it does is that it maintains a value which is needed by all the objects throughout the program and can manipulate it if needed outside the class (by default it is 0)
     int id;
 
-public:
+    public:
     void setData(void)
     {
         cout << "Enter the id " << endl;
@@ -20,7 +20,7 @@ public:
 
     static void getCount(void)
     { // this is a static function which is used so as to access static members and static functions
-        // cout<<id; //shows error as it can't access
+      // cout<<id; //shows error as it can't access
         cout << "The value of count is " << count << endl; // static functions has access to only the other static functions and static variables
     }
 };
