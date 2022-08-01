@@ -74,6 +74,8 @@ Plug 'overcache/neosolarized'
 Plug 'jiangmiao/auto-pairs'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':tsupdate'}
 Plug 'vim-syntastic/syntastic'
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'flazz/vim-colorschemes'
 Plug 'tpope/vim-obsession'
 
 if has("nvim")
@@ -155,13 +157,6 @@ function! Termwrapper(command) abort
     "exec 'startinsert'
     "autocmd bufenter <buffer> startinsert
 endfunction
-
-"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-"vim-fugitive intergration remaps
-" nmap <leader>gs :g<cr>
-"nmap <leader>gh :diffget //3<cr>
-"nmap <leader>gu :diffget //2<cr>
-"remaping ctrl + c to copy to system clipboard
 
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -296,7 +291,18 @@ endif
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
             \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
-"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+" #syntastic-vim
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
 
 "vim commentary
 autocmd FileType apache setlocal commentstring=#\ %s
