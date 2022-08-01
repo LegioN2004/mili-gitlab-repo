@@ -1,16 +1,15 @@
 filetype plugin on
 filetype indent on
+au GUIEnter * simalt ~x
 set splitbelow
 set termguicolors
 set splitright
-set ai
+set ai " always set autoindenting on
 set si
 set wildmenu
 set showmatch
 set number
 set relativenumber
-set nohlsearch
-set hidden
 set noerrorbells
 set tabstop=4 softtabstop=4
 set shiftwidth=4
@@ -25,12 +24,28 @@ set undofile
 set incsearch
 set hlsearch
 set scrolloff=8
+set t_ut=?)
+set t_Co=256
+set wrap " wraps longs lines to screen size
+set ruler
+set hlsearch " Switch on search pattern highlighting.
+set incsearch
+set ignorecase 
+set noswapfile
+set nobackup
+set noundofile
+set mouse=a
+set guifont=Hack\ NF:h12:cANSI
 set noshowmode
+set nowritebackup
+set nocompatible " Use Vim defaults (much better!), Vi is for 70's programmers!
+set bs=2 " allow backspacing over everything in insert mode
 set clipboard=unnamed,unnamedplus "set clipboard to universal for easy copy/paste to diff apps 
 set completeopt=menuone,noinsert,noselect
-" set fontsize=h:19
-set signcolumn=no  
-set mouse=a
+set showmatch
+syntax on " Switch on syntax highlighting.
+set hidden " This option allows you to switch between multiple buffers without saving a changed buffer
+set mousehide " Hide the mouse pointer while typing.
 set cmdheight=2 "give more space for displaying messages.
 set shortmess+=c "don't pass messages to |ins-completion-menu|.
 set cc=
@@ -282,27 +297,6 @@ inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
 
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-" " #syntastic-vim
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%*
-
-" let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_auto_loc_list = 1
-" let g:syntastic_check_on_open = 1
-" let g:syntastic_check_on_wq = 0
-
-
 "vim commentary
 autocmd FileType apache setlocal commentstring=#\ %s
 
-"netrw nerd tree like setup
-" let g:netrw_banner = 0
-" let g:netrw_liststyle = 3
-" let g:netrw_browse_split = 4
-" let g:netrw_altv = 1
-" let g:netrw_winsize = 25
-" augroup ProjectDrawer
-"   autocmd!
-"   autocmd VimEnter * :Vexplore
-" augroup END
