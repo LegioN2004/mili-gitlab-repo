@@ -74,6 +74,7 @@ Plug 'overcache/neosolarized'
 Plug 'jiangmiao/auto-pairs'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':tsupdate'}
 Plug 'vim-syntastic/syntastic'
+Plug 'tpope/vim-obsession'
 
 if has("nvim")
     Plug 'hoob3rt/lualine.nvim'
