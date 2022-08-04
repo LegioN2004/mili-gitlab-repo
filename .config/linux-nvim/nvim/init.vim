@@ -77,6 +77,7 @@ Plug 'vim-syntastic/syntastic'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'flazz/vim-colorschemes'
 Plug 'tpope/vim-obsession'
+Plug 'karb94/neoscroll.nvim'
 
 if has("nvim")
     Plug 'hoob3rt/lualine.nvim'
