@@ -78,6 +78,9 @@ Plug 'kyazdani42/nvim-web-devicons'
 Plug 'flazz/vim-colorschemes'
 Plug 'tpope/vim-obsession'
 Plug 'karb94/neoscroll.nvim'
+"Plug 'mhinz/vim-startify'
+"Plug 'tpope/vim-surround'
+"Plug '907th/vim-auto-save'
 
 if has("nvim")
     Plug 'hoob3rt/lualine.nvim'
