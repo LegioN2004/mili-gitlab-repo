@@ -311,3 +311,6 @@ let g:syntastic_check_on_wq = 0
 "vim commentary
 autocmd FileType apache setlocal commentstring=#\ %s
 
+"neoscroll.nvim file
+lua require('neoscroll').setup()
+
