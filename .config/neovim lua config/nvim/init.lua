@@ -1,0 +1,5 @@
+require('legion.settings')
+require('legion.colorscheme')
+require('legion.plugins')
+require('legion.alpha')
+require('legion.keymaps')
