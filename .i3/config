@@ -40,13 +40,13 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec kitty
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+q kill
 
 #run dmenu(suckless) with the following command 
-# bindsym $mod+d exec --no-startup-id dmenu_ru
+# bindsym $mod+d exec --no-startup-id dmenu_run
 # bindsym $mod+d exec rofi -show drun -lines 3 -eh 2 -width 100 -padding 800 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 18"
 # bindsym $mod+p exec --no-startup-id rofi -show drun -show-icons -lines 8 -columns 3 -eh 2 -width 74 -padding 200 -opacity "40"
 bindsym $mod+p exec  rofi -show drun 
@@ -59,10 +59,10 @@ bindsym $mod+d exec  rofi -show run
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -71,10 +71,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -83,7 +83,7 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym $mod+b split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -110,14 +110,14 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1." 
-set $ws2 "2."
-set $ws3 "3."
-set $ws4 "4."
-set $ws5 "5."
-set $ws6 "6"
-set $ws7 "7"
-set $ws8 "8"
+set $ws1 "" 
+set $ws2 ""
+set $ws3 ""
+set $ws4 ""
+set $ws5 ""
+set $ws6 ""
+set $ws7 "﬏"
+set $ws8 ""
 set $ws9 "9"
 set $ws10 "10"
 
@@ -145,17 +145,18 @@ bindsym $mod+Shift+8 move container to workspace  $ws8
 bindsym $mod+Shift+9 move container to workspace  $ws9
 bindsym $mod+Shift+0 move container to workspace  $ws10
 
-# assing apps to individual workspaces
+# assining apps to individual workspaces
 #following 3 lines are custom
 #assign [class="~/.cargo/bin/alacritty"] $ws3
 # assign [class="Min"] $ws2
-assign [class="xfce4-terminal"] $ws3
-assign [class="code"] $ws3
-assign [class="nautilus"] $ws4
+# assign [class="xfce4-terminal"] $ws3
+assign [class="Code"] $ws7
+assign [class="Org.gnome.Nautilus"] $ws4
 # assign [class="Shotcut"] $ws5
 # assign [class="obs"] $ws6
 # assign [class="neovide"] $ws7
-assign [class="brave-browser"] $ws2
+# assign [class="brave-browser"] $ws2
+assign [class="firefox-esr-esr102"] $ws2
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -247,7 +248,7 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 
-exec_always feh --bg-scale /home/sunny/Pictures/Wallpapers/daniel-leone-v7daTKlZzaw-unsplash.jpg
+exec_always feh --bg-scale /home/sunny/Pictures/Wallpapers/1121567.jpg
 # exec_always feh --bg-scale /home/sunny/Downloads/11015703.png
 
 exec_always --no-startup-id  "/home/sunny/colemak"
@@ -292,9 +293,9 @@ default_floating_border pixel 1
 exec_always sxhkd -c $HOME/.config/sxhkd/sxhkdrc
 
 #dont know if this works but set up for colemak
-exec --no-startup-id setxkbmap -model pc104 -layout us,de -variant colemak, -option "grp:alt_shift_toggle,shift:both_capslock,ctrl:swapcaps"
+# exec --no-startup-id setxkbmap -model pc104 -layout us,de -variant colemak, -option "grp:alt_shift_toggle,shift:both_capslock,ctrl:swapcaps"
 
 #remap for keyboard via xmodmap
-exec_always --no-startup-id xmodmap ~/.Xmodmap
-#exec --no-startup-id setxkbmap -option "shift:both_capslock,ctrl:swapcap"
-exec_always --no-startup-id setxkbmap -layout us -variant colemak -option ctrl:swapcap
+# exec_always --no-startup-id xmodmap ~/.Xmodmap
+# exec --no-startup-id setxkbmap -option "shift:both_capslock,ctrl:swapcaps"
+# exec_always --no-startup-id setxkbmap -layout us -variant colemak -option ctrl:swapcaps
