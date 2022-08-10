@@ -1,48 +1,76 @@
-local set = vim.opt
+-- some file related stuff
+vim.cmd('autocmd!')
 
-set.expandtab = true
-set.smarttab = true
-set.tabstop=4 softtabstop=4
-set.shiftwidth=4
+vim.scriptencoding = 'utf-8'
+vim.opt.encoding = 'utf-8'
+vim.opt.fileencoding = 'utf-8'
 
-set.hlsearch = true  --Switch on search pattern highlighting.
-set.incsearch = true
-set.ignorecase = true
-set.smartcase = true
+vim.wo.number = true
 
-set.splitright= true
-set.splitbelow = true 
-set.wrap = false
-set.scrolloff = 8
-set.fileencoding = 'utf-8'
-set.termguicolors = true 
-set.cursorline = true
+vim.opt.title = true
+vim.opt.autoindent = true
+vim.opt.hlsearch = true  --Switch on search pattern highlighting.
+vim.opt.showcmd = true
+vim.opt.cmdheight = 1
+vim.opt.laststatus = 2
+vim.opt.expandtab = true
+-- vim.opt.scrolloff = 10
+-- vim.opt.shell = 'zsh'
+vim.opt.smarttab = true
+vim.opt.tabstop=4 softtabstop=4
+vim.opt.shiftwidth=4
+vim.opt.backupskip = '/tmp/*,/private/tmp/*'
+vim.opt.inccommand = 'split'
+vim.opt.breakindent = true
+vim.opt.incsearch = true
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+vim.opt.tabstop = 2
+vim.opt.backspace = 'start,eol,indent'
+vim.opt.path:append { '**' } -- while finding files it also looks in the subfolders 
+vim.opt.wildignore:append { '*/node_modules/*' }
 
-set.relativenumber = true
+vim.opt.splitright= true
+vim.opt.splitbelow = true 
+vim.opt.wrap = false
+vim.opt.scrolloff = 8
+vim.opt.termguicolors = true 
+vim.opt.ai = true  -- always set autoindenting on
+vim.opt.si = true  -- smart indent
+vim.opt.wildmenu = true
+vim.opt.showmatch = true
+vim.opt.number = true
+vim.opt.relativenumber = true
+-- vim.opt.cmdheight=2 --give more space for displaying messages.
+vim.opt.smartindent = true
+vim.opt.undofile = false
+vim.opt.ruler = true
+vim.opt.mouse=a
+vim.opt.clipboard=unnamed,unnamedplus -- set clipboard to universal for easy copy/paste to diff apps 
+vim.opt.completeopt=menuone,noinsert,noselect
+vim.opt.hidden = true  --This option allows you to switch between multiple buffers without saving a changed buffer
+vim.opt.mousehide = true  --Hide the mouse pointer while typing.
 
--- set.colorscheme = NeoSolarized
 
-set.hidden = true
-set.ai = true  -- always set autoindenting on
-set.si = true
-set.wildmenu = true
-set.showmatch = true
-set.number = true
-set.relativenumber = true
-set.cmdheight=2 --give more space for displaying messages.
-set.smartindent = true
-set.undofile = true
-set.ruler = true
-set.ignorecase = true 
-set.mouse=a
-set.clipboard=unnamed,unnamedplus -- set clipboard to universal for easy copy/paste to diff apps 
-set.completeopt=menuone,noinsert,noselect
-set.showmatch = true
-set.hidden = true  --This option allows you to switch between multiple buffers without saving a changed buffer
-set.mousehide = true  --Hide the mouse pointer while typing.
+-- Undercurl
+vim.cmd([[let &t_Cs = "\e[4:3m"]])
+vim.cmd([[let &t_Ce = "\e[4:0m"]])
+
+-- turn off paste mode when leaving insert
+vim.api.nvim_create_autocmd("InsertLeave", {
+    pattern = '*',
+    command = 'set nopaste'
+})
+
+vim.opt.formatoptions:append { 'r' }
+
 
 -- Undo and backup options
-set.backup = false
-set.writebackup = false
-set.undofile = true
-set.swapfile = false
+vim.opt.backup = false
+vim.opt.writebackup = false
+vim.opt.undofile = true
+vim.opt.swapfile = false
+
+
+-- copy to clipboard
+-- vim.api.nvim_set_option("clipboard","unnamed","unnamedplus")

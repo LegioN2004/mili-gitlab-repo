@@ -42,7 +42,6 @@ packer.init({
 return require'packer'.startup(function()
    use 'wbthomason/packer.nvim'
    use 'nvim-lualine/lualine.nvim'
-   use 'neovim/nvim-lspconfig'
    -- LSP
 	use 'neovim/nvim-lspconfig'
 	use 'williamboman/nvim-lsp-installer'
