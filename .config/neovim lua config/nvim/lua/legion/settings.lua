@@ -1,4 +1,4 @@
--- some file related stuff
+
 vim.cmd('autocmd!')
 
 vim.scriptencoding = 'utf-8'
@@ -46,7 +46,7 @@ vim.opt.smartindent = true
 vim.opt.undofile = false
 vim.opt.ruler = true
 vim.opt.mouse=a
-vim.opt.clipboard=unnamed,unnamedplus -- set clipboard to universal for easy copy/paste to diff apps 
+-- vim.opt.clipboard=unnamed,unnamedplus -- set clipboard to universal for easy copy/paste to diff apps 
 vim.opt.completeopt=menuone,noinsert,noselect
 vim.opt.hidden = true  --This option allows you to switch between multiple buffers without saving a changed buffer
 vim.opt.mousehide = true  --Hide the mouse pointer while typing.
@@ -64,13 +64,14 @@ vim.api.nvim_create_autocmd("InsertLeave", {
 
 vim.opt.formatoptions:append { 'r' }
 
-
 -- Undo and backup options
 vim.opt.backup = false
 vim.opt.writebackup = false
 vim.opt.undofile = true
 vim.opt.swapfile = false
 
-
 -- copy to clipboard
--- vim.api.nvim_set_option("clipboard","unnamed","unnamedplus")
+vim.api.nvim_set_option("clipboard","unnamedplus")
+
+-- use mouse in neovim
+vim.opt.mouse = a

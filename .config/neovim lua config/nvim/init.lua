@@ -3,9 +3,9 @@ require('legion.plugins')
 require('legion.alpha')
 require('legion.keymaps')
 require('legion.hightlights')
--- require('legion.macos')
--- require('legion.windows')
--- require('legion.unix')
+require('legion.cmp')
+require('legion.macros')
+-- require('legion.snippets')
 
 
 local has = function(x)
@@ -14,7 +14,7 @@ end
 
 local is_win = has "win32"
 local is_mac = has "macunix"
-local is_linux = has "linux"
+local is_unix = has "Linux"
 
 if is_mac then
     require('macos')
@@ -24,6 +24,6 @@ if is_win then
     require('windows')
 end
 
-if is_linux then
-    require('unix')
-end
+-- if is_unix then
+--     require('unix')
+-- end
