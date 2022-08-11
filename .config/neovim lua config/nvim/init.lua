@@ -1,6 +1,6 @@
+require('legion.alpha')
 require('legion.settings')
 require('legion.plugins')
-require('legion.alpha')
 require('legion.keymaps')
 require('legion.hightlights')
 require('legion.cmp')
@@ -9,6 +9,10 @@ require('legion.neosolarized')
 require('legion.lualine')
 require('legion.treesitter')
 require('legion.ts-autotags')
+require('legion.telescope')
+require('legion.bufferline')
+require('legion.lspconfig')
+-- require('legion.lspkind')
 
 
 local has = function(x)

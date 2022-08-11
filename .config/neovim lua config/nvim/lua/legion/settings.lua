@@ -47,7 +47,7 @@ vim.opt.undofile = false
 vim.opt.ruler = true
 vim.opt.mouse=a
 -- vim.opt.clipboard=unnamed,unnamedplus -- set clipboard to universal for easy copy/paste to diff apps 
-vim.opt.completeopt=menuone,noinsert,noselect
+vim.opt.completeopt=menuone,noinsert,noselect --as required by nvim-cmp
 vim.opt.hidden = true  --This option allows you to switch between multiple buffers without saving a changed buffer
 vim.opt.mousehide = true  --Hide the mouse pointer while typing.
 
@@ -75,3 +75,16 @@ vim.api.nvim_set_option("clipboard","unnamedplus")
 
 -- use mouse in neovim
 vim.opt.mouse = a
+
+-- Always change the directory to working directory of file in current buffer
+vim.cmd([[
+" Always change the directory to working directory of file in current buffer - http://vim.wikia.com/wiki/VimTip64
+autocmd BufEnter * call CHANGE_CURR_DIR()
+
+function! CHANGE_CURR_DIR()
+    let _dir = expand("%:p:h")
+    exec "cd " . _dir
+    unlet _dir
+endfunction
+
+]])

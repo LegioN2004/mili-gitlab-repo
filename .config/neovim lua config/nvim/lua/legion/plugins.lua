@@ -48,12 +48,16 @@ return require'packer'.startup(function()
     use 'williamboman/nvim-lsp-installer'
     use 'jose-elias-alvarez/null-ls.nvim'
     use 'onsails/lspkind-nvim' -- vscode like pictograms
-    use 'hrsh7th/cmp-buffer' -- nvim-cmp source for buffer words
-    use 'hrsh7th/cmp-nvim-lsp' -- nvim-cmp is a sourec for neovim's built in LSP client
+    -- cmp plugins
     use 'hrsh7th/nvim-cmp' -- code completion
+    use 'hrsh7th/cmp-buffer' -- nvim-cmp source for buffer words
+    use 'hrsh7th/cmp-path' -- path completions
+    use 'saadparwaiz1/cmp_luasnip' -- snippet completions for nvim-cmp
+    use 'hrsh7th/cmp-nvim-lsp' -- nvim-cmp is a sourec for neovim's built in LSP client
     use 'L3MON4D3/LuaSnip' -- snippet engine
     use 'rafamadriz/friendly-snippets' --  snippets provider 
-
+    -- bufferline
+    use 'akinsho/bufferline.nvim'
     --colorscheme
     use 'overcache/NeoSolarized'
     use {
@@ -72,6 +76,7 @@ return require'packer'.startup(function()
     use 'nvim-lua/popup.nvim'
     use 'nvim-lua/plenary.nvim'
     use 'nvim-telescope/telescope.nvim'
+    use 'nvim-telescope/telescope-file-browser.nvim'
     use {
         'Shougo/defx.nvim',
         run = ':UpdateRemotePlugins'
