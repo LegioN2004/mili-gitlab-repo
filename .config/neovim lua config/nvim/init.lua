@@ -5,7 +5,10 @@ require('legion.keymaps')
 require('legion.hightlights')
 require('legion.cmp')
 require('legion.macros')
--- require('legion.snippets')
+require('legion.neosolarized')
+require('legion.lualine')
+require('legion.treesitter')
+require('legion.ts-autotags')
 
 
 local has = function(x)
