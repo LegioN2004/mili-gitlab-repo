@@ -4,7 +4,7 @@ local term_opts = { silent = true }
 
 -- Shorten function name
 local keymap = vim.api.nvim_set_keymap
--- local keymap = vim.keymap -- for the keymap vim.keymap.set use keymap and single quotes only for the specifying key 
+-- local keymap = vim.keymap -- for the keymap vim.keymap.set use keymap and single quotes only for the specifying key
 
 --Remap space as leader key
 keymap("", "<Space>", "<Nop>", opts)
@@ -20,7 +20,7 @@ vim.g.maplocalleader = " "
 --   command_mode = "c",
 
 -- Insert --
--- Press qq fast to exit insert mode 
+-- Press qq fast to exit insert mode
 keymap("i", "qq", "<ESC>", opts)
 
 --dont yank  with x
@@ -39,13 +39,13 @@ vim.keymap.set('n', '<C-a>', 'gg<S-v>G')
 
 
 -- keybinds for easier saving and quitting
-keymap("n", "<leader>w", ":w!<CR>", opts)
-keymap("n", "<leader>q", ":q!<CR>", opts)
-keymap("n", "<leader>qa", ":qa!<CR>", opts)
-keymap("n", "<leader>wq", ":wq!<CR>", opts)
-keymap("n", "<leader>s", ":so%<CR>", opts)
+keymap("n", "tw", ":w!<CR>", opts)
+keymap("n", "tq", ":q!<CR>", opts)
+keymap("n", "tqa", ":qa!<CR>", opts)
+keymap("n", "twq", ":wq!<CR>", opts)
+keymap("n", "ts", ":so%<CR>", opts)
 
---(window keybinds) new tab 
+--(window keybinds) new tab
 keymap("n", "tn", ":tabnew<Return><C-w>w", opts)
 -- keymap("n", "te", ":tabedit<cr>", opts), { silent = true })
 --splitting windows

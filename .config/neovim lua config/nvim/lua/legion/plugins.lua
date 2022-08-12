@@ -40,15 +40,17 @@ packer.init({
 })
 
 --put plugins here
-return require'packer'.startup(function()
+return require 'packer'.startup(function()
     use 'wbthomason/packer.nvim' --main packer neovim plugin manager
     use 'hoob3rt/lualine.nvim' -- Statusline 
+    use 'shatur/neovim-session-manager' -- sessions
     -- LSP
     use 'neovim/nvim-lspconfig'
     use 'williamboman/nvim-lsp-installer'
     use 'jose-elias-alvarez/null-ls.nvim'
     use 'onsails/lspkind-nvim' -- vscode like pictograms
-    -- cmp plugins
+    use 'glepnir/lspsaga.nvim' -- UI for lsps
+    -- cmp plugin
     use 'hrsh7th/nvim-cmp' -- code completion
     use 'hrsh7th/cmp-buffer' -- nvim-cmp source for buffer words
     use 'hrsh7th/cmp-path' -- path completions
@@ -86,8 +88,8 @@ return require'packer'.startup(function()
     use {
         'goolord/alpha-nvim',
         requires = { 'kyazdani42/nvim-web-devicons' },
-        config = function ()
-            require'alpha'.setup(require'alpha.themes.startify'.config)
+        config = function()
+            require 'alpha'.setup(require 'alpha.themes.dashboard'.config)
         end
     }
 
