@@ -5,6 +5,7 @@
 You can also use this in wsl2
 
 ![nvim, tmux in windows wsl2 screenshot](./images/windows10rice1stSSsame2ndpic.png)
+
 ![nvim, tmux in windows wsl2 screenshot](./images/windows10rice1stSS.png)
 
 
