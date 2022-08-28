@@ -12,7 +12,7 @@ vim.opt.hlsearch = true --Switch on search pattern highlighting.
 vim.opt.showcmd = true
 vim.opt.cmdheight = 1
 vim.opt.laststatus = 2
-vim.opt.expandtab = true
+-- vim.opt.expandtab = true
 -- vim.opt.scrolloff = 10
 -- vim.opt.shell = 'zsh'
 vim.opt.smarttab = true
@@ -27,7 +27,7 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.tabstop = 2
 vim.opt.backspace = 'start,eol,indent'
-vim.opt.path:append { '**' } -- while finding files it also looks in the subfolders 
+vim.opt.path:append { '**' } -- while finding files it also looks in the subfolders
 vim.opt.wildignore:append { '*/node_modules/*' }
 
 vim.opt.splitright = true

@@ -120,10 +120,10 @@ _G.packer_plugins = {
     path = "/home/sunny/.local/share/nvim/site/pack/packer/start/colorbuddy.nvim",
     url = "https://github.com/tjdevries/colorbuddy.nvim"
   },
-  ["defx.nvim"] = {
+  ["dracula.nvim"] = {
     loaded = true,
-    path = "/home/sunny/.local/share/nvim/site/pack/packer/start/defx.nvim",
-    url = "https://github.com/Shougo/defx.nvim"
+    path = "/home/sunny/.local/share/nvim/site/pack/packer/start/dracula.nvim",
+    url = "https://github.com/Mofiqul/dracula.nvim"
   },
   ["friendly-snippets"] = {
     loaded = true,
@@ -149,11 +149,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/sunny/.local/share/nvim/site/pack/packer/start/neosolarized.nvim",
     url = "https://github.com/svrana/neosolarized.nvim"
-  },
-  ["neovim-session-manager"] = {
-    loaded = true,
-    path = "/home/sunny/.local/share/nvim/site/pack/packer/start/neovim-session-manager",
-    url = "https://github.com/shatur/neovim-session-manager"
   },
   ["null-ls.nvim"] = {
     loaded = true,
@@ -194,6 +189,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/sunny/.local/share/nvim/site/pack/packer/start/nvim-yarp",
     url = "https://github.com/roxma/nvim-yarp"
+  },
+  ["onedark.nvim"] = {
+    loaded = true,
+    path = "/home/sunny/.local/share/nvim/site/pack/packer/start/onedark.nvim",
+    url = "https://github.com/navarasu/onedark.nvim"
   },
   ["packer.nvim"] = {
     loaded = true,

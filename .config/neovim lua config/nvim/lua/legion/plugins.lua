@@ -42,8 +42,11 @@ packer.init({
 --put plugins here
 return require 'packer'.startup(function()
     use 'wbthomason/packer.nvim' --main packer neovim plugin manager
-    use 'hoob3rt/lualine.nvim' -- Statusline 
-    use 'shatur/neovim-session-manager' -- sessions
+    use 'hoob3rt/lualine.nvim' -- Statusline
+    -- use 'flazz/vim-colorschemes' -- every vim colorscheme known to mankind
+    use 'navarasu/onedark.nvim'
+    use 'Mofiqul/dracula.nvim'
+    -- use 'shatur/neovim-session-manager' -- sessions
     -- LSP
     use 'neovim/nvim-lspconfig'
     use 'williamboman/nvim-lsp-installer'
@@ -57,7 +60,7 @@ return require 'packer'.startup(function()
     use 'saadparwaiz1/cmp_luasnip' -- snippet completions for nvim-cmp
     use 'hrsh7th/cmp-nvim-lsp' -- nvim-cmp is a sourec for neovim's built in LSP client
     use 'L3MON4D3/LuaSnip' -- snippet engine
-    use 'rafamadriz/friendly-snippets' --  snippets provider 
+    use 'rafamadriz/friendly-snippets' --  snippets provider
     -- bufferline
     use 'akinsho/bufferline.nvim'
     --colorscheme
@@ -79,10 +82,10 @@ return require 'packer'.startup(function()
     use 'nvim-lua/plenary.nvim'
     use 'nvim-telescope/telescope.nvim'
     use 'nvim-telescope/telescope-file-browser.nvim'
-    use {
-        'Shougo/defx.nvim',
-        run = ':UpdateRemotePlugins'
-    }
+    -- use {
+    --     'Shougo/defx.nvim',
+    --     run = ':UpdateRemotePlugins'
+    -- }
     use 'roxma/nvim-yarp'
     use 'roxma/vim-hug-neovim-rpc'
     use {
@@ -91,14 +94,7 @@ return require 'packer'.startup(function()
         config = function()
             require 'alpha'.setup(require 'alpha.themes.dashboard'.config)
         end
-        use {                   --hop neovim
-          'phaazon/hop.nvim',
-          branch = 'v2', -- optional but strongly recommended
-          config = function()
-            -- you can configure Hop the way you like here; see :h hop-config
-            require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
-          end
-}   }
+    }
 
 
     -- Automatically set up your configuration after cloning packer.nvim
