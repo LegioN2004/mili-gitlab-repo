@@ -15,4 +15,4 @@ This is a backup of my dotfiles for my ubuntu and windows machine  . Feel free t
 
 I will add some pictures once I get hold of how to use  markdown for better view of what my dotflies contains
 
-
+You can directly copy my neovim config and add it to the .config folder for unix systems and it will automatically set up everything for you 
