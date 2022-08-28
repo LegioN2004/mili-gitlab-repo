@@ -1,6 +1,6 @@
 ## Here is an image of my setup of neovim, tmux, and i3wm 
 
-![nvim, tmux, i3 in action screenshot](./screenshots/firstricenvimi3tmux.png)
+![nvim, tmux, i3 in action screenshot](./images/firstricenvimi3tmux.png)
 
 
 
