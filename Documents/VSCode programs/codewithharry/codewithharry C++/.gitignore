@@ -1,7 +1,0 @@
-Documents/VSCode programs/codewithharry/apnacollegeprograms/tut4.1/qno5.exe
-
- *.exe  
- !spec/*.exe
-
- *.out 
- !spec/*.out

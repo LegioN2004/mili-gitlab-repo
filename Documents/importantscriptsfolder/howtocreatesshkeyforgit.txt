@@ -1,6 +1,0 @@
-first go to .ssh directory under home
-second put command ssh-keygen -o -t rsa -C "github email"
-then  add the key by putting all the content under the id_rsa.pub file in the add ssh key section of github
-then add the key to the local machine using the commands: eval "$(ssh-agent -s)" && ssh-add ~/.ssh/key name (not the .pub file btw) 
-then you can clone the git repo using the ssh link 
-

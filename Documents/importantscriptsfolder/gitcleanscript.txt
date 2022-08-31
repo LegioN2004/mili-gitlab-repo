@@ -1,3 +1,0 @@
-git remote prune origin && git repack && git prune-packed && git reflog expire --expire=1.month.ago && git gc --aggressive
-
-just run these to clean repo idk if it works or not
