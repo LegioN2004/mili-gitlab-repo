@@ -1,3 +1,5 @@
+<h1 align="center">its deprecated</h1>
+
 ## Here is an image of my setup of neovim, tmux, and i3wm 
 
 ![nvim, tmux, i3 in action screenshot](./images/firstricenvimi3tmux.png)
